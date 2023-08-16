@@ -17,13 +17,16 @@ for collection in laws_data['collections']:
     if collection['collection'] == target_collection:
         for law in collection['laws']:
             if law.startswith(target_law_number):
-                print(f"目标法条：{law}")
+                print(f"{target_collection}\t{law}")
 
                 # 查找关联法条的键
                 ref_key = str((target_collection, target_law_number.strip('第条')))
 
                 # 从law_references获取关联法条
                 references = law_references.get(ref_key, [])
+
+                if references:
+                    print(f"\n关联法条：")
 
                 # 打印关联法条
                 for ref in references:
@@ -35,7 +38,8 @@ for collection in laws_data['collections']:
                         if coll['collection'] == ref_collection:
                             for ref_law in coll['laws']:
                                 if ref_law.startswith(ref_law_number):
-                                    print(f"关联法条：{ref_law}")
+                                    print(f"{ref_collection}\t{ref_law}")
 
                 break
+
 
