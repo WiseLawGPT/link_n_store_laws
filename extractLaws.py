@@ -51,7 +51,8 @@ def convert_word_to_json(file_path):
 file_names = ["中华人民共和国预防未成年人犯罪法.docx",
               "中华人民共和国义务教育法.docx",
               "中华人民共和国治安管理处罚法.docx",
-              "中华人民共和国未成年人保护法.docx"]
+              "中华人民共和国未成年人保护法.docx"
+              "中华人民共和国刑法.docx"]
 
 for file_name in file_names:
         convert_word_to_json(file_name)
